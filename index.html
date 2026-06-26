@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Badr Jabali – Performance Marketing Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet"/>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f5f5f5;
+            color: #1e1e1e;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+        .page {
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+            margin-bottom: 3rem;
+            padding: 3.5rem 4rem;
+            transition: box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 0.7s ease forwards;
+        }
+        .page:nth-child(2) { animation-delay: 0.05s; }
+        .page:nth-child(3) { animation-delay: 0.10s; }
+        .page:nth-child(4) { animation-delay: 0.15s; }
+        .page:nth-child(5) { animation-delay: 0.20s; }
+        .page:nth-child(6) { animation-delay: 0.25s; }
+        .page:nth-child(7) { animation-delay: 0.30s; }
+        .page:nth-child(8) { animation-delay: 0.35s; }
+        .page:nth-child(9) { animation-delay: 0.40s; }
+        .page:nth-child(10) { animation-delay: 0.45s; }
+        .page:nth-child(11) { animation-delay: 0.50s; }
+        .page:nth-child(12) { animation-delay: 0.55s; }
+        .page:nth-child(13) { animation-delay: 0.60s; }
+        .page:nth-child(14) { animation-delay: 0.65s; }
+        .page:nth-child(15) { animation-delay: 0.70s; }
+        .page:nth-child(16) { animation-delay: 0.75s; }
+        .page:nth-child(17) { animation-delay: 0.80s; }
+        .page:nth-child(18) { animation-delay: 0.85s; }
+        @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+        .page:hover { box-shadow: 0 12px 48px rgba(0,0,0,0.07); }
+
+        .section-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #8a8a8a;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        h1 { font-size: 3.6rem; font-weight: 700; letter-spacing: -0.03em; color: #1e1e1e; line-height: 1.1; }
+        h2 { font-size: 2.4rem; font-weight: 600; letter-spacing: -0.02em; color: #1e1e1e; margin-top: 0.2rem; }
+        h3 { font-size: 1.2rem; font-weight: 600; color: #1e1e1e; margin: 1.2rem 0 0.4rem; }
+        .subhead { font-size: 1.2rem; font-weight: 400; color: #8a8a8a; margin-top: 0.2rem; }
+        .gold-line { width: 56px; height: 4px; background: #d4a843; border-radius: 4px; margin: 0.6rem 0 1.2rem; }
+        .gold-line.centered { margin: 0.6rem auto 1.2rem; }
+        .tagline { font-size: 1.3rem; font-weight: 400; font-style: italic; color: #1e1e1e; margin: 0.6rem 0 0.4rem; }
+        .text-muted { color: #8a8a8a; }
+        .text-gold { color: #d4a843; }
+        .fw-600 { font-weight: 600; }
+
+        .btn {
+            display: inline-block;
+            background: #1e1e1e;
+            color: #ffffff;
+            padding: 0.85rem 2.8rem;
+            border-radius: 60px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: background 0.25s ease, transform 0.15s ease;
+        }
+        .btn:hover { background: #000000; transform: translateY(-2px); }
+        .btn-gold { background: #d4a843; color: #ffffff; }
+        .btn-gold:hover { background: #bf9735; }
+        .btn-outline { background: transparent; color: #1e1e1e; border: 1.5px solid #1e1e1e; }
+        .btn-outline:hover { background: #1e1e1e; color: #ffffff; }
+        .btn-sm { padding: 0.5rem 1.5rem; font-size: 0.8rem; }
+
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center; }
+        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; }
+        .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 1.5rem; }
+        .grid-2x3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
+        .grid-3x3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
+
+        .card {
+            background: #f8f8f8;
+            border-radius: 18px;
+            padding: 1.5rem 1.25rem;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.05); }
+        .card .big-number { font-size: 2.6rem; font-weight: 700; color: #1e1e1e; line-height: 1.2; }
+        .card .label { font-size: 0.8rem; color: #8a8a8a; font-weight: 500; margin-top: 0.2rem; }
+
+        .brand-card {
+            background: #ffffff;
+            border: 1px solid #ececec;
+            border-radius: 16px;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            transition: box-shadow 0.25s ease, transform 0.2s ease;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            color: inherit;
+        }
+        .brand-card:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.04); transform: translateY(-3px); }
+        .brand-card .brand-logo-container { height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 0.6rem; }
+        .brand-card .brand-logo-container img { max-height: 100%; max-width: 100%; object-fit: contain; }
+        .brand-card .brand-name { font-weight: 600; font-size: 0.95rem; color: #1e1e1e; }
+        .brand-card .brand-desc { font-size: 0.8rem; color: #8a8a8a; margin-top: 0.15rem; }
+        .brand-card .brand-result { font-size: 0.8rem; font-weight: 600; color: #d4a843; margin-top: 0.4rem; }
+        .brand-card .brand-disclaimer { font-size: 0.7rem; color: #8a8a8a; font-style: italic; margin-top: 0.2rem; }
+
+        .badge-gold {
+            display: inline-block;
+            background: #d4a843;
+            color: #ffffff;
+            font-size: 0.65rem;
+            font-weight: 600;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            letter-spacing: 0.04em;
+        }
+        .skill-tag {
+            display: inline-block;
+            background: #f0f0f0;
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            color: #1e1e1e;
+            margin: 0.25rem;
+        }
+        .skill-tag.gold { background: #d4a843; color: #ffffff; }
+
+        .img-placeholder {
+            background: #f0f0f0;
+            border-radius: 18px;
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8a8a8a;
+            font-size: 0.8rem;
+            overflow: hidden;
+        }
+        .img-placeholder img { width: 100%; height: 100%; object-fit: cover; }
+        .portrait { aspect-ratio: 1 / 1; border-radius: 50%; max-width: 240px; margin: 0 auto 1.2rem; }
+
+        .pdf-bar {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 1.5rem;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 2rem;
+            justify-content: center;
+            margin: 1.5rem 0 0.5rem;
+        }
+        .nav-links a {
+            color: #8a8a8a;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.2s;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 0.2rem;
+        }
+        .nav-links a:hover { color: #d4a843; border-bottom-color: #d4a843; }
+
+        .contact-item { display: flex; gap: 1rem; align-items: baseline; font-size: 1rem; padding: 0.5rem 0; }
+        .contact-item strong { color: #8a8a8a; font-weight: 500; min-width: 100px; }
+
+        .back-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #d4a843;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(212, 168, 67, 0.3);
+            transition: transform 0.2s, opacity 0.3s;
+            opacity: 0.8;
+            z-index: 999;
+        }
+        .back-top:hover { transform: translateY(-4px); opacity: 1; }
+
+        @media (max-width: 992px) {
+            .page { padding: 2.5rem 2rem; }
+            h1 { font-size: 2.8rem; }
+            h2 { font-size: 2rem; }
+            .grid-2 { grid-template-columns: 1fr; }
+            .grid-4 { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .page { padding: 1.8rem 1.2rem; }
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.6rem; }
+            .grid-3 { grid-template-columns: 1fr; }
+            .grid-4 { grid-template-columns: 1fr 1fr; }
+            .portrait { max-width: 180px; }
+            .btn { padding: 0.7rem 2rem; font-size: 0.9rem; }
+        }
+        @media (max-width: 480px) {
+            .page { padding: 1.2rem 0.8rem; }
+            .grid-4 { grid-template-columns: 1fr; }
+            .contact-item { flex-direction: column; gap: 0.1rem; }
+            .contact-item strong { min-width: auto; }
+        }
+        @media print {
+            .pdf-bar, .back-top, .nav-links { display: none; }
+            .page { box-shadow: none; border: 1px solid #ddd; page-break-inside: avoid; }
+            body { background: #ffffff; }
+        }
+        .text-center { text-align: center; }
+        .flex-center { display: flex; flex-direction: column; align-items: center; }
+        .mt-2 { margin-top: 2rem; }
+        .view-brand-link {
+            display: inline-block;
+            margin-top: 0.8rem;
+            color: #d4a843;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        .view-brand-link:hover { color: #bf9735; text-decoration: underline; }
+        .disclaimer-note {
+            font-size: 0.75rem;
+            color: #8a8a8a;
+            font-style: italic;
+            margin-top: 0.2rem;
+        }
+    </style>
+</head>
+<body>
+<div class="container" id="portfolio">
+
+    <div class="pdf-bar">
+        <button class="btn btn-outline" onclick="window.print()">📄 Download as PDF</button>
+    </div>
+
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#kpi">KPI</a>
+        <a href="#experience">Experience</a>
+        <a href="#case-studies">Case Studies</a>
+        <a href="#brands">Brands</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <!-- HOME -->
+    <section class="page" id="home">
+        <div class="flex-center text-center">
+            <div class="img-placeholder portrait">
+                <img src="https://via.placeholder.com/400x400/f0f0f0/8a8a8a?text=Your+Photo" alt="Badr Jabali" />
+            </div>
+            <h1>Badr Jabali</h1>
+            <div class="gold-line centered"></div>
+            <p class="subhead">Performance Marketing Specialist · Paid Media Buyer</p>
+            <p class="tagline">I turn ad spend into profit — not just clicks.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:1rem 2.5rem; justify-content:center; margin:0.5rem 0 1rem;">
+                <span><strong>3.4x Average ROAS Delivered</strong></span>
+            </div>
+            <div style="display:flex; flex-wrap:wrap; gap:1rem 2.5rem; justify-content:center; margin:0 0 1.5rem;">
+                <span><strong>4 Years Experience</strong></span>
+                <span><strong>15+ Brands</strong></span>
+                <span><strong>Consistent Profitable ROAS</strong></span>
+            </div>
+            <a href="#contact" class="btn btn-gold">WORK WITH ME</a>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="page" id="about">
+        <div class="grid-2">
+            <div>
+                <div class="section-label">Executive Summary</div>
+                <h2>About Me</h2>
+                <div class="gold-line"></div>
+                <p style="font-size:1.05rem;">
+                    I'm a Media Buyer with <strong>4 years of experience</strong> managing paid acquisition for DTC e‑commerce brands. I've worked across Meta, Google, and TikTok, delivering consistent profitable ROAS for 15+ brands across Morocco, the UK, and the USA.
+                </p>
+                <p style="margin-top:1rem;">
+                    My approach combines data‑driven audience strategy with relentless creative testing. I test 20+ creatives per week, kill losers fast, and scale winners hard.
+                </p>
+                <div style="margin:1.2rem 0;">
+                    <div style="display:flex; gap:0.75rem; align-items:flex-start; margin-bottom:0.4rem;">
+                        <span style="color:#d4a843;">→</span>
+                        <span>I speak 3 languages (English, French, Arabic) – allowing me to manage campaigns across diverse markets.</span>
+                    </div>
+                    <div style="display:flex; gap:0.75rem; align-items:flex-start; margin-bottom:0.4rem;">
+                        <span style="color:#d4a843;">→</span>
+                        <span>I build systems, not just campaigns – prospecting, retargeting, lookalike, and LTV optimization.</span>
+                    </div>
+                    <div style="display:flex; gap:0.75rem; align-items:flex-start;">
+                        <span style="color:#d4a843;">→</span>
+                        <span>I focus on profit, not just clicks or impressions.</span>
+                    </div>
+                </div>
+                <p style="font-style:italic; margin-top:1.2rem; font-size:1.1rem; color:#1e1e1e;">
+                    I don't just run ads. I build profit engines.
+                </p>
+            </div>
+            <div>
+                <div class="img-placeholder">
+                    <img src="https://via.placeholder.com/600x400/f0f0f0/8a8a8a?text=Badr+Working" alt="Badr Jabali Professional Portrait" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KPI -->
+    <section class="page" id="kpi">
+        <div class="section-label">Key Performance Indicators</div>
+        <h2>KPI Dashboard</h2>
+        <div class="gold-line"></div>
+        <div class="grid-4" style="margin-top:1.5rem;">
+            <div class="card"><div class="big-number">3.4x</div><div class="label">Average ROAS Delivered</div></div>
+            <div class="card"><div class="big-number">-30%</div><div class="label">Avg CPA Reduction</div></div>
+            <div class="card"><div class="big-number">2.8%</div><div class="label">Avg CTR</div></div>
+            <div class="card"><div class="big-number">-25%</div><div class="label">Avg CAC Reduction</div></div>
+            <div class="card"><div class="big-number">✔</div><div class="label">CPM Optimized</div></div>
+            <div class="card"><div class="big-number">✔</div><div class="label">AOV Maintained</div></div>
+            <div class="card"><div class="big-number">✔</div><div class="label">MER Profitable</div></div>
+            <div class="card"><div class="big-number">✔</div><div class="label">LTV Increased</div></div>
+        </div>
+        <div style="margin-top:1.5rem; background:#f8f8f8; padding:1rem 1.5rem; border-radius:18px; display:flex; flex-wrap:wrap; gap:1.5rem 2.5rem;">
+            <span><strong>Channel Performance:</strong></span>
+            <span>Meta Ads Manager — Primary (4 years)</span>
+            <span>Google Ads — Secondary (3 years)</span>
+            <span>TikTok Ads — Scaling (2 years)</span>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="page" id="experience">
+        <div class="section-label">Experience</div>
+        <h2>Timeline</h2>
+        <div class="gold-line"></div>
+        <p style="font-weight:600; font-size:1.1rem; margin-top:0.5rem;">
+            2022–2026 · Performance Marketing Specialist<br/>
+            <span style="font-weight:400; color:#8a8a8a;">Mercodize — Casablanca, Morocco</span>
+        </p>
+        <div style="margin-top:1.2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
+            <div>
+                <span class="badge-gold">2022</span>
+                <p style="margin-top:0.2rem;">Started as Media Buyer. Managed first client accounts. Developed testing framework.</p>
+            </div>
+            <div>
+                <span class="badge-gold">2023</span>
+                <p style="margin-top:0.2rem;">Took on larger budgets ($15k/month). Scaled multiple accounts profitably.</p>
+            </div>
+            <div>
+                <span class="badge-gold">2024</span>
+                <p style="margin-top:0.2rem;">Became lead buyer for key accounts. Full ownership of strategy, creative testing, and reporting.</p>
+            </div>
+            <div>
+                <span class="badge-gold">2025–2026</span>
+                <p style="margin-top:0.2rem;">Managed portfolio of 15+ clients across my tenure. Delivered consistent profitable ROAS. Built systems that scaled across multiple accounts.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CASE STUDIES -->
+    <div id="case-studies">
+
+        <section class="page" id="case-represent">
+            <div class="grid-2">
+                <div>
+                    <div class="section-label">Case Study</div>
+                    <h2>Represent — UK Streetwear</h2>
+                    <div class="gold-line"></div>
+                    <p style="font-weight:500; color:#8a8a8a; font-size:0.9rem;">£93M+ annual revenue · During my time at Mercodize</p>
+                    <h3>Challenge</h3>
+                    <p>Product drops generate 25x traffic spikes. Conversion rates were underperforming. ROAS was below target.</p>
+                    <h3>My Contribution</h3>
+                    <ul style="padding-left:1.2rem; color:#1e1e1e; font-size:0.95rem; margin-top:0.5rem;">
+                        <li>Audited account structure, reallocated budget to top audiences</li>
+                        <li>Creative testing framework (20+ creatives per drop)</li>
+                        <li>Lookalike audiences from existing customer data</li>
+                        <li>Retargeting for window-shoppers &amp; abandoned carts</li>
+                        <li>Bid optimization by time zone &amp; market</li>
+                    </ul>
+                    <h3>Results</h3>
+                    <ul style="padding-left:1.2rem; color:#d4a843; font-weight:600; margin-top:0.5rem;">
+                        <li>ROAS: 2.1x → 3.4x (12 months)</li>
+                        <li>CPA reduced by 30%</li>
+                        <li>Budget: $20k → $50k profitably</li>
+                    </ul>
+                    <a href="https://representclo.com" target="_blank" class="view-brand-link">View Brand →</a>
+                </div>
+                <div class="brand-card" style="padding: 3rem;">
+                    <div class="brand-logo-container" style="height: 120px;">
+                        <img src="https://via.placeholder.com/200x120/f0f0f0/8a8a8a?text=Represent" alt="Represent Logo" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page" id="case-chari">
+            <div class="grid-2">
+                <div>
+                    <div class="section-label">Case Study</div>
+                    <h2>Chari — Morocco B2B Platform</h2>
+                    <div class="gold-line"></div>
+                    <p style="font-weight:500; color:#8a8a8a; font-size:0.9rem;">$100M valuation · FT &amp; Harvard case study</p>
+                    <p class="disclaimer-note">*Through Mercodize</p>
+                    <h3>Challenge</h3>
+                    <p>Acquiring informal Moroccan retailers through digital channels – a traditionally offline audience. Brand awareness campaigns weren't converting.</p>
+                    <h3>My Contribution</h3>
+                    <ul style="padding-left:1.2rem; color:#1e1e1e; font-size:0.95rem; margin-top:0.5rem;">
+                        <li>Shifted to direct-response messaging</li>
+                        <li>Targeted retailers via Facebook &amp; WhatsApp</li>
+                        <li>Produced video testimonials from existing merchants</li>
+                        <li>Retargeting with educational content &amp; offers</li>
+                    </ul>
+                    <h3>Results</h3>
+                    <ul style="padding-left:1.2rem; color:#d4a843; font-weight:600; margin-top:0.5rem;">
+                        <li>Merchant sign-ups: +40%</li>
+                        <li>Cost-per-acquisition: -35%</li>
+                        <li>Contributed to overall growth during scaling phase</li>
+                    </ul>
+                    <a href="https://chari.ma" target="_blank" class="view-brand-link">View Brand →</a>
+                </div>
+                <div class="brand-card" style="padding: 3rem;">
+                    <div class="brand-logo-container" style="height: 120px;">
+                        <img src="https://via.placeholder.com/200x120/f0f0f0/8a8a8a?text=Chari" alt="Chari Logo" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page" id="case-rokka">
+            <div class="grid-2">
+                <div>
+                    <div class="section-label">Case Study</div>
+                    <h2>Rokka &amp; Rolla — USA Apparel</h2>
+                    <div class="gold-line"></div>
+                    <p style="font-weight:500; color:#8a8a8a; font-size:0.9rem;">California lifestyle brand · 80% GMV growth</p>
+                    <h3>Challenge</h3>
+                    <p>Over-reliance on Amazon with rising fees and poor brand positioning. Needed to expand to curated marketplaces.</p>
+                    <h3>My Contribution</h3>
+                    <ul style="padding-left:1.2rem; color:#1e1e1e; font-size:0.95rem; margin-top:0.5rem;">
+                        <li>Developed multi-channel paid media strategy beyond Amazon</li>
+                        <li>Built lookalike audiences from high-LTV customers</li>
+                        <li>Tested creative variations across platforms</li>
+                        <li>Implemented retargeting for abandoned carts</li>
+                    </ul>
+                    <h3>Results</h3>
+                    <ul style="padding-left:1.2rem; color:#d4a843; font-weight:600; margin-top:0.5rem;">
+                        <li>80% GMV growth in 12 months</li>
+                        <li>98% of sales from marketplaces</li>
+                        <li>45% of sales through curated marketplaces</li>
+                    </ul>
+                    <a href="https://rokka-rolla.com" target="_blank" class="view-brand-link">View Brand →</a>
+                </div>
+                <div class="brand-card" style="padding: 3rem;">
+                    <div class="brand-logo-container" style="height: 120px;">
+                        <img src="https://via.placeholder.com/200x120/f0f0f0/8a8a8a?text=Rokka+%26+Rolla" alt="Rokka & Rolla Logo" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page" id="case-nobodys">
+            <div class="grid-2">
+                <div>
+                    <div class="section-label">Case Study</div>
+                    <h2>Nobody's Child — UK Fashion</h2>
+                    <div class="gold-line"></div>
+                    <p style="font-weight:500; color:#8a8a8a; font-size:0.9rem;">1M orders · M&S partnership</p>
+                    <h3>Challenge</h3>
+                    <p>Balancing DTC sales with wholesale partnerships (M&S). Needed to drive brand awareness AND direct conversions.</p>
+                    <h3>My Contribution</h3>
+                    <ul style="padding-left:1.2rem; color:#1e1e1e; font-size:0.95rem; margin-top:0.5rem;">
+                        <li>Built multi-channel attribution tracking (DTC vs wholesale)</li>
+                        <li>Created audience segments to capture traffic from M&S</li>
+                        <li>Set up retargeting for back-in-stock notifications</li>
+                    </ul>
+                    <h3>Results</h3>
+                    <ul style="padding-left:1.2rem; color:#d4a843; font-weight:600; margin-top:0.5rem;">
+                        <li>28% DTC revenue increase</li>
+                        <li>Brand partnerships strengthened with M&S</li>
+                        <li>1M orders completed post-migration</li>
+                    </ul>
+                    <a href="https://nobodyschild.com" target="_blank" class="view-brand-link">View Brand →</a>
+                </div>
+                <div class="brand-card" style="padding: 3rem;">
+                    <div class="brand-logo-container" style="height: 120px;">
+                        <img src="https://via.placeholder.com/200x120/f0f0f0/8a8a8a?text=Nobody%27s+Child" alt="Nobody's Child Logo" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page" id="case-millie">
+            <div class="grid-2">
+                <div>
+                    <div class="section-label">Case Study</div>
+                    <h2>Millie &amp; Jones — UK Furniture</h2>
+                    <div class="gold-line"></div>
+                    <p style="font-weight:500; color:#8a8a8a; font-size:0.9rem;">Seven-figure revenue · 3.1x ROAS</p>
+                    <h3>Challenge</h3>
+                    <p>Basic website and underdeveloped brand identity. Needed to build trust in a high-ticket furniture market.</p>
+                    <h3>My Contribution</h3>
+                    <ul style="padding-left:1.2rem; color:#1e1e1e; font-size:0.95rem; margin-top:0.5rem;">
+                        <li>Built audience targeting for high-intent parents</li>
+                        <li>Created trust-focused creative (Trustpilot reviews)</li>
+                        <li>Retargeting sequences for purchase hesitation</li>
+                    </ul>
+                    <h3>Results</h3>
+                    <ul style="padding-left:1.2rem; color:#d4a843; font-weight:600; margin-top:0.5rem;">
+                        <li>3.1x ROAS</li>
+                        <li>Seven-figure annual revenue achieved</li>
+                    </ul>
+                    <a href="https://www.millieandjones.co.uk" target="_blank" class="view-brand-link">View Brand →</a>
+                </div>
+                <div class="brand-card" style="padding: 3rem;">
+                    <div class="brand-logo-container" style="height: 120px;">
+                        <img src="https://via.placeholder.com/200x120/f0f0f0/8a8a8a?text=Millie+%26+Jones" alt="Millie & Jones Logo" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page" id="case-zatino">
+            <div class="grid-2">
+                <div>
+                    <div class="section-label">Case Study</div>
+                    <h2>Zatino — Morocco Footwear</h2>
+                    <div class="gold-line"></div>
+                    <p style="font-weight:500; color:#8a8a8a; font-size:0.9rem;">Premium leather footwear · 35% sales increase</p>
+                    <h3>Challenge</h3>
+                    <p>Online and in-store inventory sync issues. Inconsistent cross-channel tracking.</p>
+                    <h3>My Contribution</h3>
+                    <ul style="padding-left:1.2rem; color:#1e1e1e; font-size:0.95rem; margin-top:0.5rem;">
+                        <li>Ran paid media for online and in-store sales</li>
+                        <li>Targeted fashion-conscious demographics</li>
+                        <li>Creative highlighting premium material quality</li>
+                    </ul>
+                    <h3>Results</h3>
+                    <ul style="padding-left:1.2rem; color:#d4a843; font-weight:600; margin-top:0.5rem;">
+                        <li>35% combined sales increase</li>
+                        <li>Unified POS attribution framework setup</li>
+                    </ul>
+                    <a href="https://zatino.ie" target="_blank" class="view-brand-link">View Brand →</a>
+                </div>
+                <div class="brand-card" style="padding: 3rem;">
+                    <div class="brand-logo-container" style="height: 120px;">
+                        <img src="https://via.placeholder.com/200x120/f0f0f0/8a8a8a?text=Zatino" alt="Zatino Logo" />
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- BRANDS -->
+    <section class="page" id="brands">
+        <div class="section-label">Brand Portfolio</div>
+        <h2>Brands I've Contributed To</h2>
+        <div class="gold-line"></div>
+        <div class="grid-3" style="margin-top:1.5rem;">
+            <a href="https://representclo.com" target="_blank" class="brand-card">
+                <div class="brand-logo-container"><img src="https://via.placeholder.com/120x60/f0f0f0/8a8a8a?text=Represent" alt="Represent" /></div>
+                <div class="brand-name">Represent</div>
+                <div class="brand-desc">UK Streetwear</div>
+                <div class="brand-result">3.4x ROAS</div>
+            </a>
+            <a href="https://chari.ma" target="_blank" class="brand-card">
+                <div class="brand-logo-container"><img src="https://via.placeholder.com/120x60/f0f0f0/8a8a8a?text=Chari" alt="Chari" /></div>
+                <div class="brand-name">Chari</div>
+                <div class="brand-desc">Morocco B2B Platform</div>
+                <div class="brand-disclaimer">*Through Mercodize</div>
+                <div class="brand-result">+40% Sign-ups</div>
+            </a>
+            <a href="https://rokka-rolla.com" target="_blank" class="brand-card">
+                <div class="brand-logo-container"><img src="https://via.placeholder.com/120x60/f0f0f0/8a8a8a?text=Rokka+%26+Rolla" alt="Rokka & Rolla" /></div>
+                <div class="brand-name">Rokka &amp; Rolla</div>
+                <div class="brand-desc">USA Apparel</div>
+                <div class="brand-result">80% GMV Growth</div>
+            </a>
+            <a href="https://nobodyschild.com" target="_blank" class="brand-card">
+                <div class="brand-logo-container"><img src="https://via.placeholder.com/120x60/f0f0f0/8a8a8a?text=Nobody%27s+Child" alt="Nobody's Child" /></div>
+                <div class="brand-name">Nobody's Child</div>
+                <div class="brand-desc">UK Fashion</div>
+                <div class="brand-result">+28% DTC Revenue</div>
+            </a>
+            <a href="https://www.millieandjones.co.uk" target="_blank" class="brand-card">
+                <div class="brand-logo-container"><img src="https://via.placeholder.com/120x60/f0f0f0/8a8a8a?text=Millie+%26+Jones" alt="Millie & Jones" /></div>
+                <div class="brand-name">Millie &amp; Jones</div>
+                <div class="brand-desc">UK Furniture</div>
+                <div class="brand-result">3.1x ROAS</div>
+            </a>
+            <a href="https://zatino.ie" target="_blank" class="brand-card">
+                <div class="brand-logo-container"><img src="https://via.placeholder.com/120x60/f0f0f0/8a8a8a?text=Zatino" alt="Zatino" /></div>
+                <div class="brand-name">Zatino</div>
+                <div class="brand-desc">Morocco Footwear</div>
+                <div class="brand-result">+35% Sales</div>
+            </a>
+        </div>
+    </section>
+
+    <!-- SKILLS & CONTACT -->
+    <section class="page" id="skills">
+        <div class="grid-2">
+            <div>
+                <div class="section-label">Expertise</div>
+                <h2>Core Skills</h2>
+                <div class="gold-line"></div>
+                <div style="margin-top:1rem;">
+                    <span class="skill-tag gold">Meta Ads Manager</span>
+                    <span class="skill-tag gold">Google Ads</span>
+                    <span class="skill-tag gold">TikTok Ads</span>
+                    <span class="skill-tag">UTM Tracking</span>
+                    <span class="skill-tag">Pixel Setup</span>
+                    <span class="skill-tag">Google Analytics</span>
+                    <span class="skill-tag">Creative Strategy & Testing</span>
+                    <span class="skill-tag">Audience Segmentation</span>
+                    <span class="skill-tag">Budget Scaling</span>
+                    <span class="skill-tag">DTC E-commerce Acquisition</span>
+                </div>
+            </div>
+            <div id="contact">
+                <div class="section-label">Get In Touch</div>
+                <h2>Contact Me</h2>
+                <div class="gold-line"></div>
+                <div class="contact-item"><strong>Location:</strong> Casablanca, Morocco</div>
+                <div class="contact-item"><strong>Languages:</strong> English, French, Arabic</div>
+                <div class="contact-item" style="margin-top: 1rem;">
+                    <a href="mailto:badrjabali@gmail.com" class="btn btn-gold btn-sm">badrjabali@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BACK TO TOP -->
+    <button class="back-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</button>
+
+</div>
+</body>
+</html>
